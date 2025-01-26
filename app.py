@@ -80,14 +80,14 @@ def plot_series(data, initial_date, proy):
             x=1
         ),
         yaxis_title='Demanda total [MW]',
-        #title='Continuous, variable value error bars',
+        title='Continuous, variable value error bars',
         hovermode="x"
     )
-    #fig = px.line(data2, x='local_timestamp', y="Demanda total [MW]", markers=True, labels={"local_timestamp": "Fecha"})
+    # fig = px.line(data, x='local_timestamp', y="Demanda total [MW]", markers=True, labels={"local_timestamp": "Fecha"})
     fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)', font_color="#2cfec1")
     fig.update_xaxes(showgrid=True, gridwidth=0.25, gridcolor='#7C7C7C')
     fig.update_yaxes(showgrid=True, gridwidth=0.25, gridcolor='#7C7C7C')
-    #fig.update_traces(line_color='#2cfec1')
+    fig.update_traces(line_color='#2cfec1')
 
     return fig
 
@@ -100,7 +100,7 @@ def description_card():
     return html.Div(
         id="description-card",
         children=[
-            #html.H5("Proyecto 1"),
+            html.H5("Proyecto 1"),
             html.H3("Pronóstico de producción energética"),
             html.Div(
                 id="intro",
@@ -147,7 +147,7 @@ def generate_control_card():
                                 id="dropdown-hora-inicial-hora",
                                 options=[{"label": i, "value": i} for i in np.arange(0,25)],
                                 value=pd.to_datetime(max(data.index)-dt.timedelta(days=7)).hour,
-                                # style=dict(width='50%', display="inline-block")
+                                style=dict(width='50%', display="inline-block")
                             )
                         ],
                         style=dict(width='20%')
