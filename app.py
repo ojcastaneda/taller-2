@@ -8,7 +8,7 @@ import pandas as pd
 import datetime as dt
 
 # Cambio Github
-
+# Actividad Taller 2 OJBS
 
 app = dash.Dash(
     __name__,
